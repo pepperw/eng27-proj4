@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 
 ######################################################################
-# Define some constants 
+# Define some constants
 
 SIZE = 512
 NUM_POINTS = 1000
@@ -55,12 +55,12 @@ def main():
         cv2.circle(background, tuple(p.astype(int)), 3, (0, 0, 0), -1, 16)
 
     # Pop up a window
-    cv2.namedWindow('knn')
+    #cv2.namedWindow('knn')
     cv2.imshow('knn', background)
 
     ##################################################
     # Define a mouse handling function:
-    
+
     def mouse(event, x, y, flags, param):
 
         # Create a point to match
@@ -89,10 +89,10 @@ def main():
 
     ##################################################
     # Install our mouse callback and run the demo
-    
+
     cv2.setMouseCallback('knn', mouse, None)
 
-    while True:    
+    while True:
         k = np.uint8(cv2.waitKey(5)).view(np.int8)
         if k == 27:
             break
